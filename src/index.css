@@ -32,6 +32,9 @@
 
     --border: 30 20% 88%;
     --input: 30 20% 88%;
+
+    --saffron: 38 92% 50%;
+    --saffron-foreground: 0 0% 100%;
     --ring: 25 90% 50%;
 
     --radius: 0.75rem;

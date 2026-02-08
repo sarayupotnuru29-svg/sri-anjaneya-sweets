@@ -91,7 +91,7 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-4 lg:gap-6">
             {popularSweets.map((item) => (
-              <SweetCard key={item.name} item={item} />
+              <SweetCard key={item.id} item={item} />
             ))}
           </div>
           <div className="text-center mt-8">

@@ -59,6 +59,10 @@ export default {
         "warm-cream": "hsl(var(--warm-cream))",
         "deep-brown": "hsl(var(--deep-brown))",
         "deep-red": "hsl(var(--deep-red))",
+        saffron: {
+          DEFAULT: "hsl(var(--saffron))",
+          foreground: "hsl(var(--saffron-foreground))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingCart } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
 import logo from "@/assets/logo.jpeg";
 
 const navLinks = [
@@ -13,9 +14,10 @@ const navLinks = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { totalItems, setIsCartOpen } = useCart();
 
   return (
-    <nav className="sticky top-0 z-50 bg-card/95 backdrop-blur-sm shadow-warm border-b border-border">
+    <nav className="sticky top-0 z-40 bg-card/95 backdrop-blur-sm shadow-warm border-b border-border">
       <div className="container mx-auto flex items-center justify-between py-3">
         <Link to="/" className="flex items-center gap-3">
           <img src={logo} alt="Sri Anjaneya Sweet Stall Logo" className="h-12 w-12 rounded-full object-cover" />
@@ -27,32 +29,48 @@ const Navbar = () => {
           </div>
         </Link>
 
-        {/* Desktop nav */}
-        <ul className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <li key={link.to}>
-              <Link
-                to={link.to}
-                className={`font-body text-sm font-medium transition-colors hover:text-primary ${
-                  location.pathname === link.to
-                    ? "text-primary border-b-2 border-primary pb-1"
-                    : "text-foreground"
-                }`}
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="flex items-center gap-4">
+          {/* Desktop nav */}
+          <ul className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <li key={link.to}>
+                <Link
+                  to={link.to}
+                  className={`font-body text-sm font-medium transition-colors hover:text-primary ${
+                    location.pathname === link.to
+                      ? "text-primary border-b-2 border-primary pb-1"
+                      : "text-foreground"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-foreground"
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          {/* Cart button */}
+          <button
+            onClick={() => setIsCartOpen(true)}
+            className="relative p-2 text-foreground hover:text-primary transition-colors"
+            aria-label="Open cart"
+          >
+            <ShoppingCart size={22} />
+            {totalItems > 0 && (
+              <span className="absolute -top-1 -right-1 w-5 h-5 bg-saffron text-saffron-foreground text-[10px] font-bold rounded-full flex items-center justify-center">
+                {totalItems}
+              </span>
+            )}
+          </button>
+
+          {/* Mobile toggle */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 text-foreground"
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}

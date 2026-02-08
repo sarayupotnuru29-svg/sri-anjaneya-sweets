@@ -45,7 +45,7 @@ const MenuPage = () => {
                 <h2 className="text-xl font-display font-bold text-foreground mb-6">{cat.name}</h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-5">
                   {cat.items.map((item) => (
-                    <SweetCard key={item.name} item={item} showPrices />
+                    <SweetCard key={item.id} item={item} showPrices />
                   ))}
                 </div>
               </div>
