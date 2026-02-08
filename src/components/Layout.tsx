@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import WhatsAppFloat from "./WhatsAppFloat";
+import CartDrawer from "./CartDrawer";
 
 const Layout = () => (
   <div className="min-h-screen flex flex-col">
@@ -11,6 +12,7 @@ const Layout = () => (
     </main>
     <Footer />
     <WhatsAppFloat />
+    <CartDrawer />
   </div>
 );
 
