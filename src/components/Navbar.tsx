@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ShoppingCart } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/apple-touch-icon.png";
 
 const navLinks = [
   { to: "/", label: "Home" },

@@ -8,7 +8,7 @@ const MenuPage = () => {
   return (
     <>
       <section className="bg-secondary py-12 lg:py-16">
-        <div className="container mx-auto text-center space-y-3">
+        <div className="container mx-auto text-center space-y-3 px-4">
           <h1 className="text-3xl lg:text-4xl font-display font-bold text-foreground">
             Our <span className="text-primary">Menu</span>
           </h1>
@@ -19,16 +19,16 @@ const MenuPage = () => {
       </section>
 
       <section className="py-10 lg:py-14">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-4">
           {/* Category tabs */}
           <div className="flex flex-wrap gap-2 mb-8 justify-center">
             {menuData.map((cat) => (
               <button
                 key={cat.name}
                 onClick={() => setActiveCategory(cat.name)}
-                className={`px-4 py-2 rounded-full text-xs font-body font-medium transition-colors ${
+                className={`px-4 py-2 rounded-full text-xs font-body font-medium transition-all ${
                   activeCategory === cat.name
-                    ? "bg-primary text-primary-foreground"
+                    ? "bg-primary text-primary-foreground shadow-md"
                     : "bg-secondary text-secondary-foreground hover:bg-primary/10"
                 }`}
               >
@@ -43,7 +43,14 @@ const MenuPage = () => {
             .map((cat) => (
               <div key={cat.name}>
                 <h2 className="text-xl font-display font-bold text-foreground mb-6">{cat.name}</h2>
-                <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-5">
+                
+                {/* CHANGE IS HERE: 
+                  grid-cols-2 (Mobile)
+                  md:grid-cols-3 (Tablet)
+                  lg:grid-cols-4 (Desktop - Starting at 1024px)
+                  xl:grid-cols-4 (Large Desktop)
+                */}
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 lg:gap-6">
                   {cat.items.map((item) => (
                     <SweetCard key={item.id} item={item} showPrices />
                   ))}

@@ -1,5 +1,5 @@
 import { Heart, Leaf, Users, Star } from "lucide-react";
-import aboutImage from "@/assets/about-shop.jpg";
+import aboutImage from "@/assets/aboutpic.jpg";
 
 const About = () => (
   <>
