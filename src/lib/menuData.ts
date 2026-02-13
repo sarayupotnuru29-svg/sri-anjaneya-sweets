@@ -50,6 +50,7 @@ import papuchekkaluImg from "@/assets/sweets/papuchekkalu.jpg"; // Fixed to lowe
 import gavvaluImg from "@/assets/sweets/gavvalu.jpg";
 import boondiImg from "@/assets/sweets/boondi.jpg";
 import ladduImg from "@/assets/sweets/Tokkudu-Laddu.jpg"; // Fallback image
+import agarmImg from "@/assets/sweets/agarm-mirchi.jpeg";
 
 export interface MenuItem {
   id: string;
@@ -107,6 +108,7 @@ const imageMap: Record<string, string> = {
   "vamu kommulu": vamukommaluImg,
   "special michir": specialmichirImg,
   "kalupu michir": kalupumirchirImg,
+  "agaram michir": agarmImg,
   "karam boondi": karamboundiImg,
   "chakodilu": chakodiluImg,
   "chakra banalu": chakrabanaluImg,
@@ -184,8 +186,8 @@ export const menuData: MenuCategory[] = [
       makeItem("Besar Laddu", "బెసర్ లడ్డు", 100, 200, 300),
       makeItem("Balaji Laddu", "బాలాజీ లడ్డు", 80, 150, 300),
       makeItem("Kova", "కోవా", 100, 200, 400),
-      makeItem("Sunnundalu", "సున్నుండలు", 100, 200, 400),
-      makeItem("Ragi Laddu", "రాగి లడ్డు", 100, 200, 400),
+      makeItem("Sunnundalu", "సున్నుండలు", 150, 300, 600),
+      makeItem("Ragi Laddu", "రాగి లడ్డు", 150, 300, 600),
       makeItem("Bobbatlu", "బొబ్బట్లు", 80, 150, 300),
       makeItem("Kachikayalu", "కచ్చికాయలు", 80, 150, 300),
       makeItem("Putharekulu", "పూతరేకులు", 100, 200, 400),
@@ -202,6 +204,7 @@ export const menuData: MenuCategory[] = [
       makeItem("Vamu Kommulu", "వాము కొమ్ములు", 60, 120, 240),
       makeItem("Special Michir", "స్పెషల్ మిచ్చిర్", 60, 120, 240),
       makeItem("Kalupu Michir", "కలుపు మిచ్చిర్", 60, 120, 240),
+      makeItem("Agarm Michir", "అగరం మిర్చిర్", 60, 120, 240, agarmImg),
       makeItem("Karam Boondi", "కారం బూందీ", 60, 120, 240),
       makeItem("Chakodilu", "చాకోడీలు", 60, 120, 240),
       makeItem("Chakra Banalu", "చక్ర బాణాలు", 60, 120, 240),
